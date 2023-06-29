@@ -2,16 +2,18 @@
   "posts": [
     {
       "website_url": 1,
-      "video_url": "www.myvidurl.com",
+      "video_url": "www.myvidurla.com",
        "keyword": "laxada"
     },
     {
-      "id": 2,
-      "title": "Post 2"
+       "website_url": 2,
+      "video_url": "www.myvidurlb.com",
+       "keyword": "maxada"
     },
     {
-      "id": 3,
-      "title": "Post 3"
+       "website_url": 3,
+      "video_url": "www.myvidurlc.com",
+       "keyword": "naxada"
     }
   ],
   "comments": [
