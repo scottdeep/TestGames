@@ -1,16 +1,8 @@
 {
   "posts": [
-    {
-      "website_url": 1,
-      "video_url": "www.myvidurla.com",
-       "keyword": "lazada"
-    },
-    {
-       "website_url": 2,
-      "video_url": "www.myvidurlb.com",
-       "keyword": "shopee"
-    },
-    {
+   
+
+   {
        "website_url": 3,
       "video_url": "www.myvidurlc.com",
        "keyword": "appmon"
