@@ -11,24 +11,7 @@
        "website_url": 2,
       "video_url": "www.myvidurlc.com",
        "keyword": "khaleej"
-    },
-      "website_url": 3,
-      "video_url": "www.myvidurlc.com",
-       "keyword": "الخليج"
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    },
-    {
-      "id": 2,
-      "body": "some comment",
-      "postId": 1
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+    
+  ]
 }
