@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receive Data</title>
-    <script>
-        function receiveDataFromExtension(data) {
-            // Process the received data
-            console.log('Data received:', data);
-
-            // Send data to your domain's server
-            sendDataToServer(data);
-        }
-
-        function sendDataToServer(data) {
-            fetch('https://magnetcents.com/coupons/database/save_data.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                console.log('Data sent to domain successfully');
-            })
-            .catch(error => {
-                console.error('There was a problem sending data to domain:', error);
-            });
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receive Data</title>
 </head>
 <body>
-    <h1>Receive Data</h1>
-    <p>This page receives data from the extension and sends it to the domain's server.</p>
+  <h1>Receive Data</h1>
+  <p>This page receives data from the Chrome extension and sends it to the server.</p>
 
-    <script>
-        // Example data received from the extension
-        var dataReceived = {
-            name: "John",
-            age: 30,
-            email: "john@example.com"
-        };
+  <script>
+    // Function to parse query parameters from the URL
+    function getQueryParams() {
+      const queryParams = new URLSearchParams(window.location.search);
+      const data = {};
+      for (const [key, value] of queryParams.entries()) {
+        data[key] = value;
+      }
+      return data;
+    }
 
-        // Call the function to process and send data to the domain's server
-        receiveDataFromExtension(dataReceived);
-    </script>
+    // Function to send data to the server
+    async function sendDataToServer(data) {
+      try {
+        const url = 'https://magnetcents.com/coupons/database/save_data.php';
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        console.log('Data sent to the server successfully');
+      } catch (error) {
+        console.error('There was a problem sending data to the server:', error);
+      }
+    }
+
+    // Parse query parameters from the URL
+    const queryParams = getQueryParams();
+
+    // Call the function to send data to the server
+    sendDataToServer(queryParams);
+  </script>
 </body>
 </html>
